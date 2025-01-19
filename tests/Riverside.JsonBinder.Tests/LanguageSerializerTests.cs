@@ -73,9 +73,9 @@ public class LanguageSerializerTests
 
 	public static IEnumerable<object[]> GetTestData()
 	{
-		yield return new object[] { SerializableLanguage.CSharp, "{\"name\":\"John\"}", "public class Root\n{\n    public string name { get; set; }\n}" };
+		yield return new object[] { SerializableLanguage.CSharp, "{\"name\":\"John\"}", "public class Root\n{\n    public string Name { get; set; }\n}" };
 		yield return new object[] { SerializableLanguage.Python, "{\"name\":\"John\"}", "class Root:\n    def __init__(self):\n        self.name: str = None" };
-		yield return new object[] { SerializableLanguage.Java, "{\"name\":\"John\"}", "public class Root {\n    private String name;\n    public String getname() { return name; }\n    public void setname(String name) { this.name = name; }\n}" };
+		yield return new object[] { SerializableLanguage.Java, "{\"name\":\"John\"}", "public class Root {\n    private String name;\n\n    public String getname() { return name; }\n    public void setname(String name) { this.name = name; }\n}" };
 		yield return new object[] { SerializableLanguage.JavaScript, "{\"name\":\"John\"}", "class Root {\n    constructor() {\n        this.name = null;\n    }\n}" };
 		yield return new object[] { SerializableLanguage.TypeScript, "{\"name\":\"John\"}", "class Root {\n    constructor() {\n        this.name = null;\n    }\n}" };
 		yield return new object[] { SerializableLanguage.PHP, "{\"name\":\"John\"}", "class Root {\n    public $name;\n}" };
